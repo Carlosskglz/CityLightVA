@@ -1,0 +1,148 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL REGISTRO DE USUARIO (registroU.css)
+   ========================================================================== */
+
+/* Variables locales específicas para los inputs y tarjeta de esta pantalla */
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco: #627d98;        
+    --gris-boto-texto: #cbd5e1;  
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+    --blanco-puro: #ffffff;
+}
+
+/* 1. BOTÓN VOLVER AL INICIO DE SESIÓN */
+.retorno {
+    position: absolute;
+    top: 130px; /* Alineación simétrica con la pantalla de login */
+    left: 90px;
+}
+
+.retorno a {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.retorno a:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR TIPO TARJETA PARA REGISTRO */
+.contenedor-registro {
+    background-color: var(--azul-tarjeta);
+    width: 100%;
+    max-width: 480px; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Usar auto en los laterales centra la tarjeta de forma fluida bajo el header global */
+    margin: 80px auto 50px auto; 
+}
+
+/* 3. ENCABEZADO INTERNO DE LA TARJETA */
+.header-registro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-registro h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitulo-registro {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 4. CAMPOS DEL FORMULARIO */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--gris-boto-texto);
+}
+
+.grupo-campo input {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    color: var(--blanco-puro);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--azul-foco);
+    box-shadow: 0 0 8px rgba(98, 125, 152, 0.3);
+}
+
+/* 5. BOTÓN DE REGISTRARTE */
+.btn-registrar {
+    background-color: var(--gris-boto-texto);
+    color: var(--azul-fondo-input);
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-registrar:hover {
+    background-color: var(--blanco-puro);
+    transform: translateY(-1px);
+}
+
+/* 6. PIE DEL FORMULARIO (Enlace a iniciar sesión) */
+.footer-login {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.enlace-login {
+    color: var(--blanco-puro);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.enlace-login:hover {
+    text-decoration: underline;
+}

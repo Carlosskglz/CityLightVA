@@ -1,0 +1,258 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DE LA PÁGINA REPORTAR FALLA (MEJORADO)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco: #627d98;        
+    --gris-boto-texto: #cbd5e1;  
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+    --blanco-puro: #ffffff;
+    --amarillo-luz: #ffd900;
+}
+
+/* 1. BOTÓN VOLVER AL MENÚ */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR TIPO TARJETA */
+.contenedor-reporte {
+    background-color: var(--azul-tarjeta);
+    width: 95%;
+    max-width: 850px; 
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 90px auto 40px auto; 
+}
+
+/* Encabezado */
+.header-reporte {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-reporte h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitulo-reporte {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 3. DISTRIBUCIÓN DE COLUMNAS (Paneles visuales separados) */
+.columnas-formulario {
+    display: flex;
+    flex-direction: row;
+    gap: 30px; 
+}
+
+.columna-tarjeta {
+    flex: 1;
+    background-color: rgba(19, 31, 43, 0.4); /* Fondo sutil para agrupar campos */
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-seccion {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--azul-borde);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.icono-seccion {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* 4. CAMPOS FORMULARIO (Glow Effect) */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.grupo-campo label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+    letter-spacing: 0.3px;
+}
+
+.grupo-campo input[type="text"], 
+.grupo-campo select, 
+.grupo-campo textarea {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    color: var(--blanco-puro);
+    padding: 13px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.grupo-campo select {
+    cursor: pointer;
+}
+
+.grupo-campo textarea {
+    resize: vertical;
+}
+
+/* El efecto luminoso azul-foco al interactuar */
+.grupo-campo input[type="text"]:focus, 
+.grupo-campo select:focus, 
+.grupo-campo textarea:focus {
+    border-color: var(--azul-foco);
+    box-shadow: 0 0 12px rgba(98, 125, 152, 0.4);
+    background-color: rgba(19, 31, 43, 0.9);
+}
+
+/* 5. DISEÑO DE ZONA DE CARGA DE IMAGEN (DRAG & DROP EFFECT) */
+.zona-carga {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    border: 2px dashed var(--azul-borde);
+    border-radius: 8px;
+    background-color: var(--azul-fondo-input);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Ocultamos el input feo por defecto del navegador pero lo dejamos funcional encima */
+.zona-carga input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.contenido-carga {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none; /* Permite que el clic pase a través e interactúe con el input */
+}
+
+.icono-carga {
+    font-size: 28px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.texto-carga-principal {
+    font-size: 14px;
+    color: var(--blanco-puro);
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* Hover interactivo de la zona de subida */
+.zona-carga:hover {
+    border-color: var(--gris-boto-texto);
+    background-color: rgba(72, 101, 129, 0.1);
+}
+
+.zona-carga:hover .icono-carga {
+    transform: scale(1.15);
+}
+
+/* 6. ANCHO COMPLETO */
+.ancho-completo {
+    margin-top: 15px;
+}
+
+/* Botón de Envío con Elevación */
+.btn-enviar-reporte {
+    background-color: var(--gris-boto-texto);
+    color: var(--azul-fondo-input);
+    border: none;
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-enviar-reporte:hover {
+    background-color: var(--blanco-puro);
+    transform: translateY(-2px);
+    /* Sombras que hacen juego con el resplandor de la luminaria */
+    box-shadow: 0 8px 20px rgba(255, 217, 0, 0.25); 
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .columnas-formulario {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contenedor-reporte {
+        padding: 25px;
+    }
+}

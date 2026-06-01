@@ -1,0 +1,149 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL LOGIN DE USUARIO (loginU.css)
+   ========================================================================== */
+
+/* Variables locales específicas para los inputs de esta pantalla */
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco: #627d98;        
+    --gris-boto-texto: #cbd5e1;  
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+    --blanco-puro: #ffffff;
+}
+
+/* Botón Volver al Inicio */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 90px;
+}
+
+/* Enlace regresar */
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}
+
+/* Contenedor tipo tarjeta */
+.contenedor-login {
+    background-color: var(--azul-tarjeta);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* El margin: auto se encarga de centrar la tarjeta horizontalmente sin romper el body */
+    margin: 80px auto 40px auto; 
+}
+
+/* Encabezado interno de la tarjeta */
+.header-login {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-login h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitulo-rol {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* Campos del formulario */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.grupo-campo label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--gris-boto-texto);
+}
+
+.grupo-campo input {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    color: var(--blanco-puro);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--azul-foco);
+    box-shadow: 0 0 8px rgba(98, 125, 152, 0.3);
+}
+
+/* Botón de ingreso */
+.btn-ingresar {
+    background-color: var(--gris-boto-texto);
+    color: var(--azul-fondo-input);
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-ingresar:hover {
+    background-color: var(--blanco-puro);
+    transform: translateY(-1px);
+}
+
+/* Pie del formulario */
+.footer-login {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.enlace-registro {
+    color: var(--blanco-puro);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.enlace-registro:hover {
+    text-decoration: underline;
+}

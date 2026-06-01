@@ -1,0 +1,116 @@
+/* ==========================================================================
+   3. CONTENIDO PRINCIPAL (CITYLIGHT & LOGO)
+   ========================================================================== */
+:root {
+    --azul-oscuro: #111e30;
+    --gris-botones: #d9e2ec;
+    --texto-blanco: #ffffff;
+    --texto-secundario: #9fb3c8;
+    --amarillo-luz: #ffd900;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contenedor-bienvenida {
+    margin-bottom: 40px;
+}
+
+.titulo-proyecto {
+    font-size: 76px;
+    font-family: 'Georgia', serif; 
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.ilustracion-logo span {
+    font-size: 84px;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px var(--amarillo-luz)); 
+    animation: flotar 3s ease-in-out infinite; 
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/*
+   4. SECCIÓN DE SELECCIÓN DE ROL (BOTONES EN LÍNEA)
+*/
+.seleccion-rol h3 {
+    font-size: 22px;
+    color: var(--texto-blanco);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.grupo-botones {
+    display: flex;
+    gap: 25px; /* Separación horizontal entre los botones */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.grupo-botones a {
+    text-decoration: none;
+}
+
+.grupo-botones button, .boton-enlace {
+    background-color: var(--gris-botones);
+    color: #0b132b; 
+    border: none;
+    padding: 18px 45px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 220px;
+    text-align: center;
+    display: inline-block;
+}
+
+.grupo-botones button:hover, .boton-enlace:hover {
+    background-color: var(--texto-blanco);
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*
+   5. BOTÓN DE SOPORTE (ESQUINA INFERIOR)
+*/
+.contenedor-soporte {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%;
+}
+
+#btn-soporte {
+    background-color: transparent;
+    color: var(--texto-secundario);
+    border: 1px solid var(--texto-secundario);
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-soporte:hover {
+    color: var(--texto-blanco);
+    border-color: var(--texto-blanco);
+    background-color: rgba(255, 255, 255, 0.05);
+}

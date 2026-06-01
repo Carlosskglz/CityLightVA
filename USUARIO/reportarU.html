@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Reportar Falla</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Usuario/reportarU.css">
+</head>
+<body>
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="inicioU.html" class="regresar">Volver al Menú</a>
+    </nav>
+
+    <main class="contenedor-reporte">
+        <header class="header-reporte">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Reportar Falla de Alumbrado</h2>
+            <p class="subtitulo-reporte">Ingresa los datos lo más precisos posible para agilizar la reparación</p>
+        </header>
+
+        <form id="formulario-reportar-falla" action="#" method="POST" enctype="multipart/form-data">
+            
+            <div class="columnas-formulario">
+                
+                <div class="columna-tarjeta">
+                    <h3 class="titulo-seccion">
+                        <span class="icono-seccion">📍</span> 1. Ubicación del incidente
+                    </h3>
+                    
+                    <div class="grupo-campo">
+                        <label for="alcaldia">Alcaldía</label>
+                        <select id="alcaldia" name="alcaldia" required>
+                            <option value="" disabled selected>Selecciona tu alcaldía</option>
+                            <option value="iztapalapa">Iztapalapa (Ejemplo)</option>
+                            <option value="gam">Gustavo A. Madero (Ejemplo)</option>
+                            <option value="cuauhtemoc">Cuauhtémoc (Ejemplo)</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="colonia">Colonia</label>
+                        <select id="colonia" name="colonia" required>
+                            <option value="" disabled selected>Selecciona primero una alcaldía</option>
+                            <option value="cuauhtemoc">Claveria (Ejemplo)</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="calle">Calle y Número Aproximado</label>
+                        <input type="text" id="calle" name="calle" placeholder="Ej. Av. Reforma #123, entre Calle X y Y" required>
+                    </div>
+                </div>
+
+                <div class="columna-tarjeta">
+                    <h3 class="titulo-seccion">
+                        <span class="icono-seccion">⚠️</span> 2. Detalles de la Falla
+                    </h3>
+                    
+                    <div class="grupo-campo">
+                        <label for="tipo-falla">Tipo de Falla</label>
+                        <select id="tipo-falla" name="tipo-falla" required>
+                            <option value="" disabled selected>Selecciona el estado de la luminaria</option>
+                            <option value="apagada">Luminaria completamente apagada</option>
+                            <option value="parpadeo">Luminaria parpadeando / intermitente</option>
+                            <option value="daño-poste">Poste chocado o caído</option>
+                            <option value="corto">Cortocircuito o cables expuestos</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="tiempo-falla">¿Cuánto tiempo lleva la falla?</label>
+                        <select id="tiempo-falla" name="tiempo-falla" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="reciente">Menos de una semana</option>
+                            <option value="semanas">De 1 a 4 semanas</option>
+                            <option value="meses">Más de un mes</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label>Adjuntar Imagen de Evidencia</label>
+                        <div class="zona-carga">
+                            <input type="file" id="imagen-evidencia" name="imagen-evidencia" accept="image/*" required>
+                            <div class="contenido-carga">
+                                <span class="icono-carga">📸</span>
+                                <p class="texto-carga-principal">Haz clic o arrastra una foto aquí</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ancho-completo">
+                <div class="grupo-campo">
+                    <label for="comentarios">Comentarios u observaciones extra (Opcional)</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Ej. El poste se encuentra frente a la tienda de abarrotes, tapado por las ramas de un árbol..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar-reporte">Enviar Reporte</button>
+            </div>
+
+        </form>
+    </main>
+    
+</body>
+</html>

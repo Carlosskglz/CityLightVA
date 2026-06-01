@@ -1,0 +1,65 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL, VARIABLES Y RESET
+   ========================================================================== */
+:root {
+    --azul-oscuro: #111e30;     /* Fondo principal de la pantalla */
+    --azul-navbar: #1a2736;     /* Fondo de la barra superior de InfraMex */
+    --gris-botones: #d9e2ec;    /* Color claro de los botones (texto oscuro) */
+    --texto-blanco: #ffffff;    /* Títulos principales */
+    --texto-secundario: #9fb3c8;/* Subtítulos y textos pequeños */
+    --amarillo-luz: #ffd900;    /* El resplandor del foco/luminaria */
+}
+
+/* Reseteo total para eliminar los márgenes blancos y cortes por defecto */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--azul-oscuro);
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    color: var(--texto-blanco);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantiene el soporte abajo */
+}
+
+/* 2. ENCABEZADO GLOBAL (INFRAMEX) - Con clase única aislada
+*/
+.barra-inframex {
+    background-color: var(--azul-navbar);
+    padding: 15px 40px;
+    width: 100%;
+}
+
+.barra-inframex .contenedor-marca {
+    display: flex;
+    align-items: center;
+    gap: 65px; /* Separación entre el logo y el texto */
+}
+
+.barra-inframex .logo-marca {
+    font-size: 24px;
+}
+
+.barra-inframex .texto-marca h1 {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.barra-inframex .texto-marca p {
+    font-size: 22px;
+    color: var(--texto-secundario);
+    font-style: italic;
+    margin: 0;
+}
