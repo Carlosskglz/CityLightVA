@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CityLight -Iniciar sesión USUARIO</title>
+    <title>CityLight - Iniciar sesión USUARIO</title>
     <link rel="stylesheet" href="../CSS/Usuario/loginU.css">
     <link rel="stylesheet" href="../CSS/globales.css">
 </head>
@@ -31,24 +31,31 @@
             <p class="subtitulo-rol">Modulo de Usuario</p>
         </header>
 
-        <form id="formulario-login-usuario" action="#" method="POST">
+        <form id="form-login" data-rol-esperado="usuario">
 
             <div class="grupo-campo">
-                <label for="correo">Correo Electronico</label>
-                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                <label for="correo-login">Correo Electrónico</label>
+                <input type="email" id="correo-login" name="correo" placeholder="ejemplo@correo.com">
+                <span class="error" id="error-correo"></span>
             </div>
 
             <div class="grupo-campo">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+                <label for="contrasena-login">Contraseña</label>
+                <input type="password" id="contrasena-login" name="contrasena" placeholder="Ingresa tu contraseña">
+                <span class="error" id="error-contrasena"></span>
             </div>
-            
-            <button type="submit" class="btn-ingresar">Ingresar</button>
-        </form>
-        
+
+            <span class="error" id="error-general"></span>
+
+            <button type="submit" class="btn-ingresar" id="btn-login">Ingresar</button>
+
+        </form>  <!-- ← cierra aquí, después del botón -->
+
         <footer class="footer-login">
-            <p>No tienes una cuenta? <a href="registroU.html" class="enlace-registro">Registrate aqui</a></p>
+            <p>No tienes una cuenta? <a href="registroU.html" class="enlace-registro">Regístrate aquí</a></p>
         </footer>
     </main>
+
+    <script src="../JS/login.js"></script>
 </body>
 </html>

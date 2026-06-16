@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Revisión de Reporte</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Autoridad/revisarA.css">
+</head>
+<body data-rol-requerido="autoridad">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="gestionA.html" class="regresar">Volver a la Bandeja</a>
+    </nav>
+
+    <main class="contenedor-revision">
+        <header class="header-revision">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Atención de Reporte <span id="titulo-folio">#----</span></h2>
+            <p class="subtitulo-revision">Analiza la evidencia y actualiza el estado de la incidencia</p>
+        </header>
+
+        <p id="cargando-revision" class="mensaje-carga">Cargando reporte...</p>
+
+        <div class="columnas-revision" id="contenido-revision" style="display:none;">
+
+            <div class="columna-datos">
+                <h3 class="titulo-seccion">📋 Detalles de la Incidencia</h3>
+
+                <div class="grid-datos">
+                    <div class="bloque-dato">
+                        <span class="etiqueta">Falla Reportada:</span>
+                        <p class="valor-dato" id="rev-tipo"></p>
+                    </div>
+                    <div class="bloque-dato">
+                        <span class="etiqueta">Tiempo de Falla:</span>
+                        <p class="valor-dato" id="rev-tiempo"></p>
+                    </div>
+                    <div class="bloque-dato ancho-completo">
+                        <span class="etiqueta">Ubicación Exacta:</span>
+                        <p class="valor-dato" id="rev-ubicacion"></p>
+                    </div>
+                    <div class="bloque-dato ancho-completo">
+                        <span class="etiqueta">Comentarios del Ciudadano:</span>
+                        <p class="valor-dato comentario" id="rev-comentarios"></p>
+                    </div>
+                </div>
+
+                <div class="contenedor-evidencia">
+                    <span class="etiqueta">Evidencia Fotográfica:</span>
+                    <div class="marco-foto" id="rev-foto"></div>
+                </div>
+            </div>
+
+            <div class="columna-intervencion">
+                <h3 class="titulo-seccion">⚙️ Panel de Actualización</h3>
+
+                <div class="tarjeta-estado-actual">
+                    <span class="etiqueta">Estado Actual:</span>
+                    <span class="badge-estado" id="rev-estado-actual"></span>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="nuevo-estado">Modificar Estado a:</label>
+                    <select id="nuevo-estado">
+                        <option value="" disabled selected>Seleccione el nuevo estado...</option>
+                        <option value="1">Pendiente</option>
+                        <option value="2">En proceso</option>
+                        <option value="3">Resuelto</option>
+                        <option value="4">Rechazado</option>
+                    </select>
+                    <span class="error" id="error-estado"></span>
+                </div>
+
+                <span class="error" id="error-general-rev"></span>
+
+                <button class="btn-actualizar" id="btn-actualizar">Guardar Actualización</button>
+
+                <div class="bloque-reportar-usuario">
+                    <h4>🚩 Reportar al ciudadano emisor</h4>
+                    <p class="texto-ayuda">Si el reporte es falso, ofensivo o la imagen es inapropiada, márcalo para revisión del administrador.</p>
+                    <textarea id="motivo-reporte-usuario" rows="2" placeholder="Describe el motivo..."></textarea>
+                    <span class="error" id="error-reportar-usuario"></span>
+                    <button type="button" class="btn-reportar-usuario" id="btn-reportar-usuario">Reportar Ciudadano</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/revisarA.js"></script>
+</body>
+</html>

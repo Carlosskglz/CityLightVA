@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Acceso Administrador</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Administrador/loginAd.css">
+</head>
+<body>
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="../index.html" class="regresar">Volver al Inicio</a>
+    </nav>
+
+    <main class="contenedor-login-admin">
+        <header class="header-login">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Root Central</h2>
+            <p class="subtitulo-login">Acceso exclusivo para el Administrador del Sistema</p>
+        </header>
+
+        <form id="form-login" data-rol-esperado="administrador">
+
+            <div class="grupo-campo">
+                <label for="correo-login">Correo Administrador</label>
+                <input type="email" id="correo-login" name="correo" placeholder="admin@inframex.com" autocomplete="off">
+                <span class="error" id="error-correo"></span>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="contrasena-login">Llave Maestra</label>
+                <input type="password" id="contrasena-login" name="contrasena" placeholder="••••••••••••">
+                <span class="error" id="error-contrasena"></span>
+            </div>
+
+            <span class="error" id="error-general"></span>
+
+            <button type="submit" class="btn-ingresar-admin" id="btn-login">Autenticar Entrada</button>
+
+        </form>
+
+        <footer class="footer-login">
+            <p>Este acceso es exclusivo para el administrador del sistema.</p>
+        </footer>
+    </main>
+
+    <script src="../JS/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Detalle de Reporte</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Usuario/detalleU.css">
+</head>
+<body data-rol-requerido="usuario">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="historialU.html" class="regresar">Volver al Historial</a>
+    </nav>
+
+    <main class="contenedor-detalle">
+        <header class="header-detalle">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Detalle del Reporte <span id="titulo-folio">#----</span></h2>
+            <p class="subtitulo-detalle">Consulta el estado actual y las observaciones de la revisión</p>
+        </header>
+
+        <!-- Mensaje mientras carga -->
+        <p id="cargando-detalle" class="mensaje-carga">Cargando reporte...</p>
+
+        <!-- Contenido (oculto hasta que cargue) -->
+        <div class="columnas-detalle" id="contenido-detalle" style="display:none;">
+
+            <div class="columna-info">
+                <h3 class="titulo-seccion">📋 Datos del Reporte</h3>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Tipo de Incidente:</span>
+                    <p class="valor-dato" id="detalle-tipo"></p>
+                </div>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Alcaldía:</span>
+                    <p class="valor-dato" id="detalle-alcaldia"></p>
+                </div>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Colonia:</span>
+                    <p class="valor-dato" id="detalle-colonia"></p>
+                </div>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Calle y Número:</span>
+                    <p class="valor-dato" id="detalle-calle"></p>
+                </div>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Tiempo que llevaba la falla (al reportar):</span>
+                    <p class="valor-dato" id="detalle-tiempo"></p>
+                </div>
+
+                <div class="bloque-dato">
+                    <span class="etiqueta">Comentarios del Usuario:</span>
+                    <p class="valor-dato comentario" id="detalle-comentarios"></p>
+                </div>
+            </div>
+
+            <div class="columna-estatus">
+                <h3 class="titulo-seccion">⚡ Seguimiento de la Falla</h3>
+
+                <div class="tarjeta-estado-actual">
+                    <span class="etiqueta-estatus">Estado del Reporte:</span>
+                    <span class="badge-estado" id="detalle-estado"></span>
+                    <p class="fecha-actualizacion" id="detalle-fecha-actualizacion"></p>
+                </div>
+
+                <div class="contenedor-evidencia">
+                    <span class="etiqueta">Evidencia Fotográfica:</span>
+                    <div class="marco-foto" id="contenedor-foto">
+                        <!-- La imagen se inserta dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/detalleU.js"></script>
+</body>
+</html>

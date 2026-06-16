@@ -1,0 +1,307 @@
+/* ==========================================================================
+   CONSOLA DE ADMINISTRACIÓN CENTRAL - ESTILOS DE VISTA DETALLADA (verReporteAd.css)
+   ========================================================================== */
+
+:root {
+    /* Paleta Core: Cyber-Monochrome */
+    --fondo-root: #0a0a0c;
+    --grafito-panel: #121214;     
+    --grafito-bloque: #1a1a1e;       
+    --borde-sutil: #26262b;          
+    --borde-enfoque: #40404a;
+    
+    /* Tipografías y Textos */
+    --texto-principal: #f4f4f5;
+    --texto-secundario: #a1a1aa;
+    --texto-mutado: #52525b;
+    
+    /* Estados de Alerta de Infraestructura */
+    --color-pendiente: #fbbf24;
+    --color-revision: #38bdf8;
+    --color-reparada: #34d399;
+    
+    /* Sistema de Destrucción */
+    --rojo-root: #ef4444;
+    --rojo-root-hover: #dc2626;
+    --rojo-root-brillo: rgba(239, 68, 68, 0.15);
+}
+
+/* 1. BOTÓN DE RETORNO AL SISTEMA */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: var(--grafito-panel);
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--borde-sutil);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--texto-principal);
+    border-color: var(--borde-enfoque);
+    background-color: var(--grafito-bloque);
+    transform: translateX(-2px);
+}
+
+/* 2. CONTENEDOR MAESTRO DE LA CONSOLA */
+.contenedor-detalle-admin {
+    width: 95%;
+    max-width: 950px;
+    margin: 110px auto 50px auto;
+    background-color: var(--grafito-panel);
+    border: 1px solid var(--borde-sutil);
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+/* 3. CABECERA METADATA DEL REPORTE */
+.header-detalle {
+    background-color: #0d0d0f;
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--borde-sutil);
+}
+
+.identificador-grupo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.identificador-grupo h2 {
+    font-size: 20px;
+    color: var(--texto-secundario);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.id-resaltado {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--texto-principal);
+    font-weight: 700;
+    background-color: #000000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--borde-sutil);
+}
+
+.fecha-registro {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--texto-mutado);
+    margin: 0;
+}
+
+/* Chips de Estado de Datos */
+.estado {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.estado.pendiente { color: var(--color-pendiente); border-color: rgba(251, 191, 36, 0.2); background-color: rgba(251, 191, 36, 0.03); }
+.estado.revision { color: var(--color-revision); border-color: rgba(56, 189, 248, 0.2); background-color: rgba(56, 189, 248, 0.03); }
+.estado.reparada { color: var(--color-reparada); border-color: rgba(52, 211, 153, 0.2); background-color: rgba(52, 211, 153, 0.03); }
+
+/* 4. DISPOSICIÓN EN REJILLA DE DATOS (GRID) */
+.cuerpo-reporte {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Sección Fotográfica */
+.seccion-evidencia h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--texto-mutado);
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.contenedor-foto {
+    width: 100%;
+    height: 380px;
+    background-color: #070708;
+    border: 1px solid var(--borde-sutil);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.contenedor-foto:hover {
+    border-color: var(--borde-enfoque);
+}
+
+.foto-evidencia {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%); /* Atenúa un poco el color para encajar con el panel */
+    transition: filter 0.3s ease;
+}
+
+.contenedor-foto:hover .foto-evidencia {
+    filter: grayscale(0%);
+}
+
+/* Módulos de Información Crítica */
+.bloque-dato {
+    margin-bottom: 28px;
+}
+
+.bloque-dato h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--texto-mutado);
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.dato-principal {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--texto-principal);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.bloque-dato p {
+    font-size: 14px;
+    color: var(--texto-secundario);
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.bloque-dato strong {
+    color: var(--texto-principal);
+    font-weight: 600;
+}
+
+/* Caja de Texto Contenido Ciudadano */
+.caja-descripcion {
+    background-color: var(--grafito-bloque);
+    padding: 18px;
+    border: 1px solid var(--borde-sutil);
+    border-radius: 4px;
+    position: relative;
+}
+
+.caja-descripcion p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #d4d4d8;
+    line-height: 1.6;
+}
+
+/* Pie de Metadatos de Auditoría */
+.meta-datos {
+    border-top: 1px solid var(--borde-sutil);
+    padding-top: 20px;
+    margin-bottom: 0;
+}
+
+.meta-datos p {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--texto-mutado);
+    margin: 4px 0;
+}
+
+/* 5. SECCIÓN CRÍTICA (ZONA DE PELIGRO) */
+.footer-acciones-root {
+    background-color: #0f0b0c; 
+    border-top: 1px solid rgba(239, 68, 68, 0.15);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.advertencia-root p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--texto-secundario);
+    max-width: 480px;
+    line-height: 1.5;
+}
+
+.advertencia-root strong {
+    color: var(--rojo-root);
+    font-weight: 700;
+}
+
+/* Disparador de Comando de Eliminación */
+.btn-eliminar-definitivo {
+    background-color: transparent;
+    color: var(--rojo-root);
+    border: 1px solid var(--rojo-root);
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.btn-eliminar-definitivo:hover {
+    background-color: var(--rojo-root);
+    color: var(--texto-principal);
+    box-shadow: 0 0 20px var(--rojo-root-brillo);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. OPTIMIZACIÓN RESPONSIVA
+   ========================================================================== */
+@media (max-width: 800px) {
+    .cuerpo-reporte {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+    
+    .contenedor-foto {
+        height: 300px;
+    }
+    
+    .footer-acciones-root {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .advertencia-root p {
+        max-width: 100%;
+    }
+    
+    .btn-eliminar-definitivo {
+        width: 100%;
+    }
+}

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL MENÚ DE INICIO DE AUTORIDAD (inicioA.css)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco-autoridad: #829ab1; 
+    --gris-institucional: #bcccdc;  
+    --blanco-puro: #ffffff;      
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+}
+
+/* 1. BOTÓN CERRAR SESIÓN */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: #ef4444; /* Color rojo sutil para indicar salida */
+    background-color: rgba(239, 68, 68, 0.08);
+    border-color: #ef4444;
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR DEL MENÚ */
+.contenedor-menu-autoridad {
+    width: 95%;
+    max-width: 800px;
+    margin: 100px auto 40px auto;
+}
+
+.header-menu {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 78px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-menu h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-menu {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 3. CONTENEDOR DE LOS BOTONES GRANDES */
+.grupo-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Separación vertical entre las dos opciones */
+}
+
+/* Las tarjetas/botones interactivos */
+.tarjeta-opcion {
+    background-color: var(--azul-tarjeta);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px 35px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row; /* Icono a la izquierda, textos a la derecha */
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+/* Animación responsiva interactiva */
+.tarjeta-opcion:hover {
+    transform: translateY(-3px);
+    border-color: var(--azul-borde);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Iconos gigantes */
+.icono-opcion {
+    font-size: 40px;
+    background-color: var(--azul-fondo-input);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 75px;
+    height: 75px;
+}
+
+/* Sección interna de textos */
+.textos-opcion {
+    text-align: left;
+}
+
+.textos-opcion h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin: 0 0 6px 0;
+}
+
+.textos-opcion p {
+    font-size: 14px;
+    color: var(--texto-secundario);
+    margin: 0;
+    line-height: 1.5;
+}

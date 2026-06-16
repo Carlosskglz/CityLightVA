@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Panel Central</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Administrador/inicioAd.css">
+</head>
+<body data-rol-requerido="administrador">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <button onclick="cerrarSesion()" class="regresar">Cerrar Sesión</button>
+    </nav>
+
+    <main class="contenedor-menu-admin">
+        <header class="header-menu">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Consola de Administración Central</h2>
+            <p class="subtitulo-menu">Panel de control de CityLight</p>
+        </header>
+
+        <div class="grupo-opciones-admin">
+            
+            <a href="personalAd.html" class="tarjeta-opcion-admin">
+                <div class="icono-opcion-admin">👥</div>
+                <div class="textos-opcion-admin">
+                    <h3>Gestión de Personal / Empleados</h3>
+                    <p>Alta, baja y edición de las cuentas del personal técnico de la autoridad urbana.</p>
+                </div>
+            </a>
+
+            <a href="catalogosAd.html" class="tarjeta-opcion-admin">
+                <div class="icono-opcion-admin">🗂️</div>
+                <div class="textos-opcion-admin">
+                    <h3>Control de Catálogos / Infraestructura</h3>
+                    <p>Administración dinámica de alcaldías, colonias y tipos de fallas de luminarias.</p>
+                </div>
+            </a>
+
+            <a href="historialAd.html" class="tarjeta-opcion-admin">
+                <div class="icono-opcion-admin">🗑️</div>
+                <div class="textos-opcion-admin">
+                    <h3>Historial Global / Eliminacion</h3>
+                    <p>Revisión general de reportes con herramientas exclusivas de eliminación.</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+</body>
+</html>

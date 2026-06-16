@@ -1,0 +1,136 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL MENÚ DE INICIO DE ADMINISTRADOR (inicioAd.css)
+   ========================================================================== */
+
+:root {
+    --grafito-tarjeta: #1a1a1a;     
+    --grafito-borde: #333333;       
+    --plomo-foco: #555555;          
+    --texto-admin-secundario: #888888;
+    --blanco-puro: #ffffff;      
+    --fondo-input-admin: #111111;
+}
+
+/* 1. BOTÓN CERRAR SESIÓN */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-admin-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgb(216, 34, 34);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--grafito-borde);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: #e63946; 
+    background-color: rgba(230, 57, 70, 0.08);
+    border-color: #e63946;
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR DEL MENÚ */
+.contenedor-menu-admin {
+    width: 95%;
+    max-width: 850px;
+    margin: 100px auto 40px auto;
+}
+
+.header-menu {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 68px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-menu h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-menu {
+    color: var(--texto-admin-secundario);
+    font-size: 14px;
+}
+
+/* 3. GRUPO DE OPCIONES VERTICALES */
+.grupo-opciones-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Tarjetas Root */
+.tarjeta-opcion-admin {
+    background-color: var(--grafito-tarjeta);
+    border: 1px solid var(--grafito-borde);
+    border-radius: 6px; 
+    padding: 22px 35px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.tarjeta-opcion-admin:hover {
+    transform: translateY(-2px);
+    border-color: var(--plomo-foco);
+    background-color: #1f1f1f;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Contenedor del Icono */
+.icono-opcion-admin {
+    font-size: 36px;
+    background-color: var(--fondo-input-admin);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    height: 70px;
+}
+
+/* Textos internos */
+.textos-opcion-admin {
+    text-align: left;
+}
+
+.textos-opcion-admin h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin: 0 0 6px 0;
+}
+
+.textos-opcion-admin p {
+    font-size: 13.5px;
+    color: var(--texto-admin-secundario);
+    margin: 0;
+    line-height: 1.5;
+}

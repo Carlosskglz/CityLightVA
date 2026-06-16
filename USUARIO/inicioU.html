@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/globales.css">
     <link rel="stylesheet" href="../CSS/Usuario/inicioU.css">
 </head>
-<body>
+<body data-rol-requerido="usuario"> 
     <header class="barra-inframex">
         <div class="contenedor-marca">
             <div class="logo-marca"></div>
@@ -19,7 +19,7 @@
     </header>
 
     <nav class="retorno">
-        <a href="../index.html" class="regresar">Cerrar Sesión</a>
+        <button onclick="cerrarSesion()" class="regresar">Cerrar Sesión</button>
     </nav>
 
     <main>
@@ -42,8 +42,6 @@
         </section>
     </main>
 
-    <div class="contenedor-soporte">
-        <button type="button" id="btn-soporte">Soporte</button>
-    </div>
+    <script src="../JS/auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Detalles del Reporte (Root)</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Administrador/verReportesAd.css">
+</head>
+<body data-rol-requerido="administrador">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="historialAd.html" class="regresar">Volver al Historial</a>
+    </nav>
+
+    <main class="contenedor-detalle-admin">
+
+        <p id="cargando-detalle-admin" class="mensaje-carga">Cargando reporte...</p>
+
+        <div id="contenido-detalle-admin" style="display:none;">
+
+            <header class="header-detalle">
+                <div class="identificador-grupo">
+                    <h2>Reporte <span class="id-resaltado" id="ad-folio">#----</span></h2>
+                    <span class="estado" id="ad-estado"></span>
+                </div>
+                <p class="fecha-registro" id="ad-fecha-registro"></p>
+            </header>
+
+            <div class="cuerpo-reporte">
+
+                <section class="seccion-evidencia">
+                    <h3>Evidencia Fotográfica</h3>
+                    <div class="contenedor-foto" id="ad-foto">
+                        <!-- Imagen o mensaje "sin imagen" -->
+                    </div>
+                </section>
+
+                <section class="seccion-datos">
+
+                    <div class="bloque-dato">
+                        <h3>Tipo de Falla</h3>
+                        <p class="dato-principal" id="ad-tipo"></p>
+                    </div>
+
+                    <div class="bloque-dato">
+                        <h3>Ubicación Exacta</h3>
+                        <p><strong>Alcaldía:</strong> <span id="ad-alcaldia"></span></p>
+                        <p><strong>Colonia:</strong> <span id="ad-colonia"></span></p>
+                        <p><strong>Calle/Referencias:</strong> <span id="ad-calle"></span></p>
+                    </div>
+
+                    <div class="bloque-dato">
+                        <h3>Descripción del Ciudadano</h3>
+                        <div class="caja-descripcion">
+                            <p id="ad-descripcion"></p>
+                        </div>
+                    </div>
+
+                    <div class="bloque-dato meta-datos">
+                        <p><strong>Tiempo de falla reportado:</strong> <span id="ad-tiempo"></span></p>
+                        <p><strong>Última actualización:</strong> <span id="ad-actualizacion"></span></p>
+                    </div>
+
+                </section>
+            </div>
+
+            <footer class="footer-acciones-root">
+                <div class="advertencia-root">
+                    <p>⚠️ <strong>ZONA DE PELIGRO:</strong> Esta acción borrará permanentemente el reporte y su evidencia de la base de datos. No se puede deshacer.</p>
+                </div>
+
+                <span class="error" id="error-eliminar"></span>
+
+                <button type="button" class="btn-eliminar-definitivo" id="btn-eliminar-definitivo">
+                    🗑️ Eliminar Reporte Permanentemente
+                </button>
+            </footer>
+
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/verReportesAd.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Gestión de Personal</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Administrador/personalAd.css">
+</head>
+<body data-rol-requerido="administrador">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="inicioAd.html" class="regresar">Volver al Panel Central</a>
+    </nav>
+
+    <main class="contenedor-personal">
+        <header class="header-personal">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Consola de Personal</h2>
+            <p class="subtitulo-personal">Administra accesos, roles y alertas de uso indebido del sistema</p>
+        </header>
+
+        <!-- ============================================= -->
+        <!-- CREAR NUEVA CUENTA DE ACCESO -->
+        <!-- ============================================= -->
+        <section class="panel-crear-cuenta">
+            <h3 class="titulo-seccion">
+                <span class="prompt-icono">&gt;_</span> Nueva Cuenta de Acceso
+            </h3>
+
+            <form id="form-nueva-cuenta">
+                <div class="campos-grid-personal">
+                    <div class="grupo-campo">
+                        <label for="nombre-personal">Nombre completo</label>
+                        <input type="text" id="nombre-personal" placeholder="Nombre del empleado">
+                        <span class="error" id="error-nombre-personal"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="correo-personal">Correo institucional</label>
+                        <input type="email" id="correo-personal" placeholder="empleado@inframex.com">
+                        <span class="error" id="error-correo-personal"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="telefono-personal">Teléfono</label>
+                        <input type="tel" id="telefono-personal" placeholder="10 dígitos">
+                        <span class="error" id="error-telefono-personal"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="rol-personal">Nivel de acceso</label>
+                        <select id="rol-personal">
+                            <option value="" selected disabled>Selecciona un rol</option>
+                            <option value="autoridad">Autoridad</option>
+                            <option value="administrador">Administrador</option>
+                        </select>
+                        <span class="error" id="error-rol-personal"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="contrasena-personal">Contraseña temporal</label>
+                        <input type="password" id="contrasena-personal" placeholder="Mínimo 8 caracteres">
+                        <span class="error" id="error-contrasena-personal"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="confirmar-personal">Confirmar contraseña</label>
+                        <input type="password" id="confirmar-personal" placeholder="Repite la contraseña">
+                        <span class="error" id="error-confirmar-personal"></span>
+                    </div>
+                </div>
+
+                <span class="error" id="error-general-personal"></span>
+
+                <button type="submit" class="btn-crear-personal" id="btn-crear-personal">
+                    Crear Cuenta
+                </button>
+            </form>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- FILTROS -->
+        <!-- ============================================= -->
+        <section class="panel-filtros-personal">
+            <div class="grupo-filtro-personal">
+                <label for="filtro-rol-personal">Rol</label>
+                <select id="filtro-rol-personal">
+                    <option value="">Todos los roles</option>
+                    <option value="usuario">Usuario</option>
+                    <option value="autoridad">Autoridad</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+            </div>
+
+            <div class="grupo-filtro-personal">
+                <label for="filtro-estado-personal">Estado de cuenta</label>
+                <select id="filtro-estado-personal">
+                    <option value="">Todas</option>
+                    <option value="activo">Activas</option>
+                    <option value="baneado">Suspendidas</option>
+                </select>
+            </div>
+
+            <div class="grupo-filtro-personal filtro-checkbox-wrap">
+                <label class="filtro-checkbox">
+                    <input type="checkbox" id="filtro-reportados">
+                    🚩 Solo reportados
+                </label>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- LISTADO DE CUENTAS -->
+        <!-- ============================================= -->
+        <section class="panel-listado">
+            <h3 class="titulo-seccion">📋 Cuentas Registradas <span id="contador-personal" class="contador-personal"></span></h3>
+
+            <p id="cargando-personal" class="mensaje-carga">Cargando cuentas...</p>
+            <p id="sin-resultados-personal" class="mensaje-vacio" style="display:none;">No hay cuentas que coincidan con estos filtros.</p>
+
+            <div class="tabla-scroll" id="contenedor-tabla-personal" style="display:none;">
+                <table class="tabla-personal">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Alertas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-personal"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/personalAd.js"></script>
+</body>
+</html>

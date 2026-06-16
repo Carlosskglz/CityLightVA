@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Mis Reportes</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Usuario/historialU.css">
+</head>
+<body data-rol-requerido="usuario">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="inicioU.html" class="regresar">Volver al Menú</a>
+    </nav>
+
+    <main class="contenedor-historial">
+        <header class="header-historial">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Historial de Reportes</h2>
+            <p class="subtitulo-historial">Sigue el estado y las actualizaciones de tus reportes enviados</p>
+        </header>
+
+        <!-- Mensaje mientras carga -->
+        <p id="cargando-reportes" class="mensaje-carga">Cargando tus reportes...</p>
+
+        <!-- Mensaje si no hay reportes -->
+        <p id="sin-reportes" class="mensaje-vacio" style="display:none;">
+            Aún no has enviado ningún reporte. 
+            <a href="reportarU.html">¡Reporta una falla aquí!</a>
+        </p>
+
+        <!-- Lista de reportes — se llena dinámicamente -->
+        <div class="lista-reportes" id="lista-reportes" style="display:none;">
+            <!-- Las tarjetas se generan desde historialU.js -->
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/historialU.js"></script>
+</body>
+</html>

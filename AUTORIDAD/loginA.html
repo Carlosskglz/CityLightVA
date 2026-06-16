@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Acceso Institucional</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Autoridad/loginA.css">
+</head>
+<body>
+ 
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+ 
+    <nav class="retorno">
+        <a href="../index.html" class="regresar">Volver al Inicio</a>
+    </nav>
+ 
+    <main class="contenedor-login-autoridad">
+        <header class="header-login">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Portal de Autoridad</h2>
+            <p class="subtitulo-login">Panel de Gestión Técnico y Administrativo</p>
+        </header>
+ 
+        <form id="form-login" data-rol-esperado="autoridad">
+ 
+            <div class="grupo-campo">
+                <label for="correo-login">Correo Institucional</label>
+                <input type="email" id="correo-login" name="correo" placeholder="ejemplo@inframex.com" autocomplete="off">
+                <span class="error" id="error-correo"></span>
+            </div>
+ 
+            <div class="grupo-campo">
+                <label for="contrasena-login">Contraseña Institucional</label>
+                <input type="password" id="contrasena-login" name="contrasena" placeholder="Ingresa tu clave de acceso">
+                <span class="error" id="error-contrasena"></span>
+            </div>
+ 
+            <span class="error" id="error-general"></span>
+ 
+            <button type="submit" class="btn-ingresar-autoridad" id="btn-login">Ingresar al Sistema</button>
+        </form>
+ 
+        <footer class="footer-login">
+            <p>¿Problemas con tus credenciales? <br>
+            <a href="mailto:citylighte6@gmail.com" class="enlace-soporte">Envia un correo a: citylighte6@gmail.com</a>
+        </footer>
+    </main>
+ 
+    <script src="../JS/login.js"></script>
+</body>
+</html>

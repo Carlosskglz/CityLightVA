@@ -1,0 +1,265 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA REVISIÓN DE REPORTES (revisarA.css)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco-autoridad: #829ab1; 
+    --gris-institucional: #bcccdc;  
+    --blanco-puro: #ffffff;      
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+
+    /* Estados */
+    --color-pendiente: #f59e0b;
+    --color-revision: #3b82f6;
+    --color-reparada: #10b981;
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--azul-foco-autoridad);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR PRINCIPAL */
+.contenedor-revision {
+    background-color: var(--azul-tarjeta);
+    width: 95%;
+    max-width: 1000px; /* Ancho amplio para dos columnas cómodas */
+    padding: 40px 45px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(130, 154, 177, 0.15);
+    margin: 90px auto 40px auto;
+}
+
+.header-revision {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-revision h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-revision {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 3. COLUMNAS Y LAYOUT */
+.columnas-revision {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+}
+
+.columna-datos {
+    flex: 1.2; /* Toma un poco más de espacio para la foto y ubicación */
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-intervencion {
+    flex: 1; /* El panel derecho (formulario) es un poco más estrecho */
+    background-color: rgba(19, 31, 43, 0.4);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--azul-borde);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-seccion {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--azul-borde);
+    padding-bottom: 10px;
+}
+
+/* 4. BLOQUES DE DATOS LECTURA (IZQUIERDA) */
+.grid-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.bloque-dato {
+    display: flex;
+    flex-direction: column;
+}
+
+.ancho-completo {
+    grid-column: span 2;
+}
+
+.etiqueta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gris-institucional);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.valor-dato {
+    font-size: 15px;
+    color: var(--blanco-puro);
+    background-color: var(--azul-fondo-input);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.valor-dato.comentario {
+    font-style: italic;
+    color: var(--texto-secundario);
+}
+
+/* Foto de Evidencia */
+.contenedor-evidencia {
+    margin-top: 10px;
+}
+
+.marco-foto {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    border-radius: 8px;
+    padding: 6px;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 5. FORMULARIO DE INTERVENCIÓN (DERECHA) */
+.tarjeta-estado-actual {
+    background-color: var(--azul-fondo-input);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed var(--azul-foco-autoridad);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.badge-estado {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.badge-estado.pendiente { background-color: rgba(245, 158, 11, 0.15); color: var(--color-pendiente); border: 1px solid var(--color-pendiente); }
+.badge-estado.revision { background-color: rgba(59, 130, 246, 0.15); color: var(--color-revision); border: 1px solid var(--color-revision); }
+.badge-estado.reparada { background-color: rgba(16, 185, 129, 0.15); color: var(--color-reparada); border: 1px solid var(--color-reparada); }
+
+/* Campos del formulario */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-campo label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+}
+
+.grupo-campo select,
+.grupo-campo textarea {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    color: var(--blanco-puro);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    resize: none; /* Evita que el usuario deforme el textarea arrastrándolo */
+}
+
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+    border-color: var(--azul-foco-autoridad);
+    box-shadow: 0 0 10px rgba(130, 154, 177, 0.3);
+}
+
+/* Botón Guardar */
+.btn-actualizar {
+    background-color: var(--gris-institucional);
+    color: var(--azul-fondo-input);
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto; /* Empuja el botón al final de la columna */
+}
+
+.btn-actualizar:hover {
+    background-color: var(--blanco-puro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}

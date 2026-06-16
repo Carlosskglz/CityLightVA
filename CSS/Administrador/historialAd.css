@@ -1,0 +1,270 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA AUDITORÍA DE REPORTES (historialAd.css)
+   ========================================================================== */
+
+:root {
+    --grafito-tarjeta: #1a1a1a;     
+    --grafito-borde: #333333;       
+    --plomo-foco: #555555;          
+    --texto-admin-secundario: #888888;
+    --blanco-puro: #ffffff;      
+    --fondo-input-admin: #111111;
+    --rojo-peligro: #dc2626;
+    --rojo-peligro-hover: #b91c1c;
+
+    /* Estados adaptados a tema oscuro */
+    --color-pendiente: #fbbf24;
+    --color-revision: #60a5fa;
+    --color-reparada: #34d399;
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-admin-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--grafito-borde);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--plomo-foco);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR PRINCIPAL */
+.contenedor-auditoria {
+    width: 95%;
+    max-width: 1000px;
+    margin: 90px auto 40px auto;
+}
+
+.header-auditoria {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 66px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-auditoria h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-auditoria {
+    color: var(--texto-admin-secundario);
+    font-size: 14px;
+}
+
+/* 3. BARRA DE FILTROS ROOT */
+.barra-filtros-admin {
+    background-color: var(--grafito-tarjeta);
+    padding: 20px 25px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    border: 1px solid var(--grafito-borde);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.grupo-filtro label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--texto-admin-secundario);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.grupo-filtro select,
+.grupo-filtro input {
+    background-color: var(--fondo-input-admin);
+    border: 1px solid var(--grafito-borde);
+    color: var(--blanco-puro);
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.grupo-filtro select:focus,
+.grupo-filtro input:focus {
+    border-color: var(--plomo-foco);
+}
+
+.btn-filtrar-admin {
+    background-color: var(--blanco-puro);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 42px; /* Alineado con los inputs */
+}
+
+.btn-filtrar-admin:hover {
+    background-color: #dddddd;
+}
+
+/* 4. LISTA DE REPORTES (AUDITORÍA) */
+.lista-global-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarjeta-auditoria {
+    background-color: var(--grafito-tarjeta);
+    border: 1px solid var(--grafito-borde);
+    border-radius: 8px;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-auditoria:hover {
+    border-color: var(--plomo-foco);
+    background-color: #1f1f1f;
+}
+
+.info-auditoria {
+    flex: 1;
+}
+
+.encabezado-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.id-reporte {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--blanco-puro);
+    font-family: monospace;
+    background-color: var(--fondo-input-admin);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--grafito-borde);
+}
+
+.estado {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.estado.pendiente { color: var(--color-pendiente); border-color: rgba(251, 191, 36, 0.3); background-color: rgba(251, 191, 36, 0.05); }
+.estado.revision { color: var(--color-revision); border-color: rgba(96, 165, 250, 0.3); background-color: rgba(96, 165, 250, 0.05); }
+.estado.reparada { color: var(--color-reparada); border-color: rgba(52, 211, 153, 0.3); background-color: rgba(52, 211, 153, 0.05); }
+
+.detalles-texto h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin: 0 0 5px 0;
+}
+
+.ubicacion-reporte,
+.fecha-reporte {
+    font-size: 13px;
+    color: var(--texto-admin-secundario);
+    margin: 3px 0;
+}
+
+/* 5. SECCIÓN DE ACCIONES / BOTONES VERTICALES */
+.acciones-auditoria {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 10px;              /* Espacio simétrico entre botones */
+    min-width: 160px;       /* Asegura que ambos midan lo mismo de ancho */
+}
+
+.acciones-auditoria form {
+    margin: 0;
+}
+
+/* Botón de Ver Detalles (Neutro/Informativo) */
+.btn-ver-reporte {
+    background-color: transparent;
+    color: var(--blanco-puro);
+    border: 1px solid var(--grafito-borde);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-reporte:hover {
+    background-color: var(--plomo-foco);
+    border-color: var(--blanco-puro);
+}
+
+/* Botón de Eliminación (Acción Destructiva) */
+.btn-eliminar-root {
+    background-color: transparent;
+    color: var(--rojo-peligro);
+    border: 1px solid var(--rojo-peligro);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Toma el ancho total del contenedor .acciones-auditoria */
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.btn-eliminar-root:hover {
+    background-color: var(--rojo-peligro-hover);
+    color: var(--blanco-puro);
+    border-color: var(--rojo-peligro-hover);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}

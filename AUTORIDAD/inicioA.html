@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Panel de Administración</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Autoridad/inicioA.css">
+</head>
+<body data-rol-requerido="autoridad">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <button onclick="cerrarSesion()" class="regresar">Cerrar Sesión</button>
+    </nav>
+
+    <main class="contenedor-menu-autoridad">
+        <header class="header-menu">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Panel de Control Institucional</h2>
+            <p class="subtitulo-menu">Selecciona una herramienta para gestionar la infraestructura urbana</p>
+        </header>
+
+        <div class="grupo-opciones">
+            
+            <a href="gestionA.html" class="tarjeta-opcion">
+                <div class="icono-opcion">🛠️</div>
+                <div class="textos-opcion">
+                    <h3>Gestionar Reportes</h3>
+                    <p>Visualiza, filtra por alcaldía/estado e interviene en los reportes ciudadanos.</p>
+                </div>
+            </a>
+
+            <a href="estadisticasA.html" class="tarjeta-opcion">
+                <div class="icono-opcion">📊</div>
+                <div class="textos-opcion">
+                    <h3>Estadísticas del Sistema</h3>
+                    <p>Consulta métricas mensuales, rendimiento de cuadrillas y reportes resueltos.</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <script src="../JS/auth.js"></script>
+</body>
+</html>

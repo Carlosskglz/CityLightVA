@@ -1,0 +1,173 @@
+/* ============================================================
+   estadisticasA.css — Estadísticas del Sistema (Autoridad)
+   Tema teal/autoridad, consistente con gestionA / revisarA
+   ============================================================ */
+
+.contenedor-estadisticas {
+  --bg-panel:     #1c2a3e;
+  --bg-panel-alt: #23324a;
+  --border-soft:  rgba(255, 255, 255, 0.08);
+  --text-soft:    #93a5c4;
+  --accent:       #2dd4bf;
+
+  --color-pendiente: #fbbf24;
+  --color-revision:  #60a5fa;
+  --color-reparada:  #4ade80;
+  --color-rechazado: #f87171;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* ─── Encabezado ──────────────────────────────────────────── */
+.header-estadisticas {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.subtitulo-estadisticas {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.mensaje-carga,
+.mensaje-vacio {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ─── Tarjetas resumen ────────────────────────────────────── */
+.grid-tarjetas-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.tarjeta-resumen {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.valor-resumen {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.etiqueta-resumen {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Paneles de gráficas ─────────────────────────────────── */
+.panel-estadistica {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+  color: #f1f5f9;
+}
+
+/* ─── Barras horizontales ─────────────────────────────────── */
+.lista-barras {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fila-barra {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fila-barra-encabezado {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.fila-barra-encabezado .valor {
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.pista-barra {
+  width: 100%;
+  height: 10px;
+  border-radius: 99px;
+  background: var(--bg-panel-alt);
+  overflow: hidden;
+}
+
+.barra-relleno {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+/* Colores por estado, igual a las clases usadas en historial/gestión */
+.barra-relleno.pendiente { background: var(--color-pendiente); }
+.barra-relleno.revision  { background: var(--color-revision); }
+.barra-relleno.reparada  { background: var(--color-reparada); }
+.barra-relleno.rechazado { background: var(--color-rechazado); }
+
+/* ─── Responsivo ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .grid-tarjetas-resumen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}

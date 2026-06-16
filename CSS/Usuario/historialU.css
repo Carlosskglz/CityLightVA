@@ -1,0 +1,199 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL HISTORIAL DE REPORTES (historialU.css)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco: #627d98;        
+    --gris-boto-texto: #cbd5e1;  
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+    --blanco-puro: #ffffff;
+    
+    /* Colores para las etiquetas de estado */
+    --color-pendiente: #f59e0b;  /* Ámbar */
+    --color-revision: #3b82f6;   /* Azul */
+    --color-reparada: #10b981;   /* Verde */
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR GENERAL */
+.contenedor-historial {
+    width: 95%;
+    max-width: 900px; /* Un poco más espacioso para el formato horizontal */
+    margin: 90px auto 40px auto;
+}
+
+.header-historial {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-historial h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitulo-historial {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 3. FILAS / TARJETAS DE REPORTE */
+.lista-reportes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espacio entre cada renglón */
+}
+
+.tarjeta-reporte {
+    background-color: var(--azul-tarjeta);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Separa los datos del botón abrir */
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-reporte:hover {
+    transform: translateY(-2px);
+    border-color: var(--azul-borde);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección izquierda: Textos */
+.info-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    text-align: left;
+}
+
+.id-reporte {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--texto-secundario);
+    background-color: var(--azul-fondo-input);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detalles-texto h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin: 0 0 6px 0;
+}
+
+.ubicacion-reporte {
+    font-size: 14px;
+    color: var(--gris-boto-texto);
+    margin: 0 0 4px 0;
+}
+
+.fecha-reporte {
+    font-size: 12px;
+    color: var(--texto-secundario);
+    margin: 0;
+}
+
+/* Sección derecha: Estatus y Botón */
+.acciones-reporte {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Badges / Etiquetas de Estado */
+.estado {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.estado.pendiente {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--color-pendiente);
+    border: 1px solid var(--color-pendiente);
+}
+
+.estado.revision {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--color-revision);
+    border: 1px solid var(--color-revision);
+}
+
+.estado.reparada {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--color-reparada);
+    border: 1px solid var(--color-reparada);
+}
+
+/* Botón Abrir */
+.btn-abrir {
+    background-color: var(--azul-fondo-input);
+    color: var(--blanco-puro);
+    border: 1px solid var(--azul-borde);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-abrir:hover {
+    background-color: var(--gris-boto-texto);
+    color: var(--azul-fondo-input);
+    border-color: var(--gris-boto-texto);
+}

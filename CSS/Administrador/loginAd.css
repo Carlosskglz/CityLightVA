@@ -1,0 +1,149 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL LOGIN DE ADMINISTRADOR (loginAdmin.css)
+   ========================================================================== */
+
+:root {
+    --grafito-tarjeta: #1a1a1a;     /* Fondo más oscuro para denotar nivel Root */
+    --grafito-borde: #333333;       
+    --plomo-foco: #555555;          
+    --texto-admin-secundario: #888888;
+    --blanco-puro: #ffffff;      
+    --rojo-alerta-sutil: #e63946;   /* Color de acento para la advertencia o enfoque */
+    --fondo-input-admin: #111111;
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-admin-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--grafito-borde);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--plomo-foco);
+    transform: translateX(-3px);
+}
+
+/* 2. TARJETA DE LOGIN ROOT */
+.contenedor-login-admin {
+    background-color: var(--grafito-tarjeta);
+    width: 100%;
+    max-width: 450px; 
+    padding: 40px;
+    border-radius: 8px; /* Bordes menos redondeados para una estética más rígida/cuadrada */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--grafito-borde);
+    margin: 80px auto 40px auto; 
+}
+
+/* Encabezado interno */
+.header-login {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-login h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-login {
+    color: var(--texto-admin-secundario);
+    font-size: 13px;
+}
+
+/* 3. CAMPOS FORMULARIO */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-campo label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.grupo-campo input {
+    background-color: var(--fondo-input-admin);
+    border: 1px solid var(--grafito-borde);
+    color: var(--blanco-puro);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: monospace; /* Fuente de código para inputs de administrador */
+}
+
+.grupo-campo input:focus {
+    border-color: var(--plomo-foco);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* 4. BOTÓN ROOT */
+.btn-ingresar-admin {
+    background-color: var(--blanco-puro);
+    color: #000000;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-ingresar-admin:hover {
+    background-color: #dddddd;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* 5. PIE DEL LOGIN (ADVERTENCIA SEGURIDAD) */
+.footer-login {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 12px;
+    color: #555555; /* Texto muy discreto */
+    line-height: 1.5;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    padding-top: 20px;
+}

@@ -1,0 +1,353 @@
+/* ============================================================
+   personalAd.css — Consola de Personal (Administrador)
+   Sigue el tema "Root Central": fondo oscuro, acentos rojo/ámbar
+   para acciones de control de acceso.
+   ============================================================ */
+
+.contenedor-personal {
+  --bg-panel:       #1c2a3e;
+  --bg-panel-alt:   #23324a;
+  --border-soft:    rgba(255, 255, 255, 0.08);
+  --text-soft:      #93a5c4;
+
+  --rol-usuario:    #4f8ff7;
+  --rol-autoridad:  #2dd4bf;
+  --rol-admin:      #e0573c;
+
+  --estado-activo:  #4ade80;
+  --estado-baneado: #f87171;
+  --flag-reportado: #fbbf24;
+
+  --admin-negro: #1a1a1a;
+
+  --mono: 'Courier New', Courier, monospace;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* ─── Encabezado ──────────────────────────────────────────── */
+.header-personal {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.subtitulo-personal {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ─── Paneles generales ──────────────────────────────────── */
+.panel-crear-cuenta,
+.panel-filtros-personal,
+.panel-listado {
+  background: var(--admin-negro);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  margin: 0 0 16px;
+  color: #f1f5f9;
+}
+
+.prompt-icono {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--rol-admin);
+  background: rgba(224, 87, 60, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(224, 87, 60, 0.3);
+  font-size: 0.85rem;
+}
+
+/* ─── Formulario crear cuenta ────────────────────────────── */
+.campos-grid-personal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.btn-crear-personal {
+  background: var(--rol-admin);
+  color: #fff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-crear-personal:hover { opacity: 0.88; }
+
+.btn-crear-personal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Filtros ─────────────────────────────────────────────── */
+.panel-filtros-personal {
+  display: flex;
+  gap: 22px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.grupo-filtro-personal label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.filtro-checkbox-wrap {
+  align-self: center;
+}
+
+.filtro-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.filtro-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--flag-reportado);
+}
+
+/* ─── Contador ────────────────────────────────────────────── */
+.contador-personal {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 9px;
+  border-radius: 99px;
+  border: 1px solid var(--border-soft);
+}
+
+/* ─── Mensajes ────────────────────────────────────────────── */
+.mensaje-carga,
+.mensaje-vacio {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ─── Tabla ───────────────────────────────────────────────── */
+.tabla-scroll {
+  overflow-x: auto;
+}
+
+.tabla-personal {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 720px;
+}
+
+.tabla-personal th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+.tabla-personal td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: middle;
+  color: #e2e8f0;
+}
+
+.tabla-personal tbody tr:hover td {
+  background: var(--bg-panel-alt);
+}
+
+/* Fila de cuenta baneada — se ve "apagada" */
+.tabla-personal tr.fila-baneada td {
+  opacity: 0.5;
+}
+
+/* Fila reportada — barra lateral de alerta */
+.tabla-personal tr.fila-reportada td:first-child {
+  border-left: 3px solid var(--flag-reportado);
+}
+
+/* ─── ID estilo "registro de sistema" ────────────────────── */
+.id-sistema {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+  white-space: nowrap;
+}
+
+/* ─── Badges de rol ───────────────────────────────────────── */
+.badge-rol {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.badge-rol.usuario       { background: rgba(79, 143, 247, 0.16); color: var(--rol-usuario); }
+.badge-rol.autoridad     { background: rgba(45, 212, 191, 0.16); color: var(--rol-autoridad); }
+.badge-rol.administrador { background: rgba(224, 87, 60, 0.18); color: var(--rol-admin); }
+
+/* ─── Estado de cuenta (activo/baneado) ──────────────────── */
+.estado-cuenta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.dot.activo  { background: var(--estado-activo); }
+.dot.baneado { background: var(--estado-baneado); }
+
+/* ─── Badge de reportado ──────────────────────────────────── */
+.badge-reportado {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--flag-reportado);
+  background: rgba(251, 191, 36, 0.12);
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  cursor: help;
+  white-space: nowrap;
+}
+
+.sin-alertas {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+/* ─── Botones de acción ───────────────────────────────────── */
+.acciones-personal {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-accion-personal {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-accion-personal:hover { opacity: 0.8; }
+
+.btn-accion-personal:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-banear {
+  background: rgba(248, 113, 113, 0.14);
+  color: var(--estado-baneado);
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.btn-reactivar {
+  background: rgba(74, 222, 128, 0.14);
+  color: var(--estado-activo);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.btn-quitar-marca {
+  background: rgba(251, 191, 36, 0.14);
+  color: var(--flag-reportado);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.btn-eliminar-personal {
+  background: rgba(224, 87, 60, 0.18);
+  color: var(--rol-admin);
+  border-color: rgba(224, 87, 60, 0.35);
+}
+
+/* ─── Responsivo ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .panel-filtros-personal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/globales.css">
     <link rel="stylesheet" href="../CSS/Usuario/reportarU.css">
 </head>
-<body>
+<body data-rol-requerido="usuario">
 
     <header class="barra-inframex">
         <div class="contenedor-marca">
@@ -30,36 +30,42 @@
             <p class="subtitulo-reporte">Ingresa los datos lo más precisos posible para agilizar la reparación</p>
         </header>
 
-        <form id="formulario-reportar-falla" action="#" method="POST" enctype="multipart/form-data">
-            
+        <form id="form-reporte" enctype="multipart/form-data">
+
             <div class="columnas-formulario">
-                
+
                 <div class="columna-tarjeta">
                     <h3 class="titulo-seccion">
                         <span class="icono-seccion">📍</span> 1. Ubicación del incidente
                     </h3>
-                    
+
                     <div class="grupo-campo">
-                        <label for="alcaldia">Alcaldía</label>
-                        <select id="alcaldia" name="alcaldia" required>
-                            <option value="" disabled selected>Selecciona tu alcaldía</option>
-                            <option value="iztapalapa">Iztapalapa (Ejemplo)</option>
-                            <option value="gam">Gustavo A. Madero (Ejemplo)</option>
-                            <option value="cuauhtemoc">Cuauhtémoc (Ejemplo)</option>
+                        <label for="alcaldia-reporte">Alcaldía</label>
+                        <select id="alcaldia-reporte" name="id_alcaldia">
+                            <option value="" selected>Selecciona tu alcaldía</option>
+                            <!-- Se llena dinámicamente desde la BD -->
                         </select>
+                        <span class="error" id="error-alcaldia"></span>
                     </div>
 
                     <div class="grupo-campo">
-                        <label for="colonia">Colonia</label>
-                        <select id="colonia" name="colonia" required>
-                            <option value="" disabled selected>Selecciona primero una alcaldía</option>
-                            <option value="cuauhtemoc">Claveria (Ejemplo)</option>
+                        <label for="colonia-reporte">Colonia</label>
+                        <select id="colonia-reporte" name="id_colonia" disabled>
+                            <option value="" selected>Selecciona primero una alcaldía</option>
                         </select>
+                        <span class="error" id="error-colonia"></span>
                     </div>
 
                     <div class="grupo-campo">
-                        <label for="calle">Calle y Número Aproximado</label>
-                        <input type="text" id="calle" name="calle" placeholder="Ej. Av. Reforma #123, entre Calle X y Y" required>
+                        <label for="calle-reporte">Calle</label>
+                        <input type="text" id="calle-reporte" name="calle" placeholder="Ej. Av. Reforma, entre Calle X y Y">
+                        <span class="error" id="error-calle"></span>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="numero-reporte">Número (casa/poste de referencia)</label>
+                        <input type="text" id="numero-reporte" name="numero_casa" placeholder="Ej. 123 o S/N">
+                        <span class="error" id="error-numero"></span>
                     </div>
                 </div>
 
@@ -67,38 +73,38 @@
                     <h3 class="titulo-seccion">
                         <span class="icono-seccion">⚠️</span> 2. Detalles de la Falla
                     </h3>
-                    
+
                     <div class="grupo-campo">
-                        <label for="tipo-falla">Tipo de Falla</label>
-                        <select id="tipo-falla" name="tipo-falla" required>
-                            <option value="" disabled selected>Selecciona el estado de la luminaria</option>
-                            <option value="apagada">Luminaria completamente apagada</option>
-                            <option value="parpadeo">Luminaria parpadeando / intermitente</option>
-                            <option value="daño-poste">Poste chocado o caído</option>
-                            <option value="corto">Cortocircuito o cables expuestos</option>
+                        <label for="problema-reporte">Tipo de Falla</label>
+                        <select id="problema-reporte" name="id_problema">
+                            <option value="" selected>Selecciona el tipo de falla</option>
+                            <!-- Se llena dinámicamente desde la BD -->
                         </select>
+                        <span class="error" id="error-problema"></span>
                     </div>
 
                     <div class="grupo-campo">
-                        <label for="tiempo-falla">¿Cuánto tiempo lleva la falla?</label>
-                        <select id="tiempo-falla" name="tiempo-falla" required>
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="reciente">Menos de una semana</option>
-                            <option value="semanas">De 1 a 4 semanas</option>
-                            <option value="meses">Más de un mes</option>
+                        <label for="tiempo-reporte">¿Cuánto tiempo lleva la falla?</label>
+                        <select id="tiempo-reporte" name="tiempo_falla">
+                            <option value="" selected>Selecciona una opción</option>
+                            <option value="Menos de una semana">Menos de una semana</option>
+                            <option value="De 1 a 4 semanas">De 1 a 4 semanas</option>
+                            <option value="Más de un mes">Más de un mes</option>
                         </select>
+                        <span class="error" id="error-tiempo"></span>
                     </div>
 
                     <div class="grupo-campo">
                         <label>Adjuntar Imagen de Evidencia</label>
                         <div class="zona-carga">
-                            <input type="file" id="imagen-evidencia" name="imagen-evidencia" accept="image/*" required>
+                            <input type="file" id="imagen-reporte" name="imagen" accept="image/png, image/jpeg, image/webp">
                             <div class="contenido-carga">
                                 <span class="icono-carga">📸</span>
                                 <p class="texto-carga-principal">Haz clic o arrastra una foto aquí</p>
-                                
+                                <p class="texto-carga-secundario" id="nombre-archivo"></p>
                             </div>
                         </div>
+                        <span class="error" id="error-imagen"></span>
                     </div>
                 </div>
 
@@ -106,15 +112,20 @@
 
             <div class="ancho-completo">
                 <div class="grupo-campo">
-                    <label for="comentarios">Comentarios u observaciones extra (Opcional)</label>
-                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Ej. El poste se encuentra frente a la tienda de abarrotes, tapado por las ramas de un árbol..."></textarea>
+                    <label for="comentarios-reporte">Comentarios u observaciones extra</label>
+                    <textarea id="comentarios-reporte" name="desc_extra" rows="3" placeholder="Ej. El poste se encuentra frente a la tienda de abarrotes, tapado por las ramas de un árbol..."></textarea>
+                    <span class="error" id="error-comentarios"></span>
                 </div>
 
-                <button type="submit" class="btn-enviar-reporte">Enviar Reporte</button>
+                <span class="error" id="error-general"></span>
+
+                <button type="submit" class="btn-enviar-reporte" id="btn-reportar">Enviar Reporte</button>
             </div>
 
         </form>
     </main>
-    
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/reportes.js"></script>
 </body>
 </html>

@@ -1,0 +1,153 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL LOGIN DE AUTORIDAD (loginA.css)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco-autoridad: #829ab1; /* Tono acero más claro para el enfoque institucional */
+    --gris-institucional: #bcccdc;  /* Color del botón principal técnico */
+    --blanco-puro: #ffffff;      
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--azul-foco-autoridad);
+    transform: translateX(-3px);
+}
+
+/* 2. TARJETA DE LOGIN INDUSTRIAL */
+.contenedor-login-autoridad {
+    background-color: var(--azul-tarjeta);
+    width: 100%;
+    max-width: 450px; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(130, 154, 177, 0.15); /* Borde sutil con tono acero */
+    margin: 80px auto 40px auto; 
+}
+
+/* Encabezado interno */
+.header-login {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-login h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo-login {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+/* 3. CAMPOS FORMULARIO */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-campo label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--gris-institucional);
+}
+
+.grupo-campo input {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    color: var(--blanco-puro);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--azul-foco-autoridad);
+    box-shadow: 0 0 10px rgba(130, 154, 177, 0.3);
+    background-color: rgba(19, 31, 43, 0.8);
+}
+
+/* 4. BOTÓN INSTITUCIONAL */
+.btn-ingresar-autoridad {
+    background-color: var(--gris-institucional);
+    color: var(--azul-fondo-input);
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-ingresar-autoridad:hover {
+    background-color: var(--blanco-puro);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. PIE DEL LOGIN */
+.footer-login {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 13px;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+}
+
+.enlace-soporte {
+    color: var(--blanco-puro);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.enlace-soporte:hover {
+    text-decoration: underline;
+}

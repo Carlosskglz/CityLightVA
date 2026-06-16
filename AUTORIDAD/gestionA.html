@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityLight - Gestión de Reportes</title>
+    <link rel="stylesheet" href="../CSS/globales.css">
+    <link rel="stylesheet" href="../CSS/Autoridad/gestionA.css">
+</head>
+<body data-rol-requerido="autoridad">
+
+    <header class="barra-inframex">
+        <div class="contenedor-marca">
+            <div class="logo-marca"></div>
+            <div class="texto-marca">
+                <h1>INFRAMEX</h1>
+                <p>Software, Softlife</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="retorno">
+        <a href="inicioA.html" class="regresar">Volver al Panel</a>
+    </nav>
+
+    <main class="contenedor-gestion">
+        <header class="header-gestion">
+            <h1 class="titulo-modulo">CityLight</h1>
+            <h2>Bandeja de Reportes Ciudadanos</h2>
+            <p class="subtitulo-gestion">Filtra y atiende las incidencias de infraestructura urbana</p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="barra-filtros">
+            <div class="grupo-filtro">
+                <label for="filtro-estado">Estado</label>
+                <select id="filtro-estado">
+                    <option value="">Todos los estados</option>
+                    <option value="Pendiente">Pendientes</option>
+                    <option value="En proceso">En Revisión</option>
+                    <option value="Resuelto">Reparadas</option>
+                    <option value="Rechazado">Rechazados</option>
+                </select>
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="filtro-alcaldia">Alcaldía</label>
+                <select id="filtro-alcaldia">
+                    <option value="">Todas las alcaldías</option>
+                    <!-- Se llena dinámicamente -->
+                </select>
+            </div>
+
+            <div class="grupo-filtro">
+                <label for="filtro-fecha">Fecha (Desde)</label>
+                <input type="date" id="filtro-fecha">
+            </div>
+
+            <button class="btn-filtrar" id="btn-filtrar">Aplicar Filtros</button>
+        </div>
+
+        <!-- Mensaje de carga -->
+        <p id="cargando-gestion" class="mensaje-carga">Cargando reportes...</p>
+        <p id="sin-reportes-gestion" class="mensaje-vacio" style="display:none;">No hay reportes con esos filtros.</p>
+
+        <!-- Lista de reportes -->
+        <div class="lista-global-reportes" id="lista-gestion" style="display:none;">
+            <!-- Se genera dinámicamente -->
+        </div>
+
+    </main>
+
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/gestionA.js"></script>
+</body>
+</html>

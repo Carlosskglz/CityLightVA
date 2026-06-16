@@ -1,0 +1,211 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DEL DETALLE DE UN REPORTE (detalleU.css)
+   ========================================================================== */
+
+:root {
+    --azul-tarjeta: #1c2d3d;     
+    --azul-borde: #486581;       
+    --azul-foco: #627d98;        
+    --gris-boto-texto: #cbd5e1;  
+    --texto-secundario: #9fb3c8;
+    --azul-fondo-input: #131f2b;
+    --blanco-puro: #ffffff;
+    
+    /* Estados */
+    --color-pendiente: #f59e0b;
+    --color-revision: #3b82f6;
+    --color-reparada: #10b981;
+}
+
+/* 1. BOTÓN VOLVER */
+.retorno {
+    position: absolute;
+    top: 130px; 
+    left: 100px;
+}
+
+.regresar {
+    color: var(--gris-boto-texto);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.regresar:hover {
+    color: var(--blanco-puro);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--gris-boto-texto);
+    transform: translateX(-3px);
+}
+
+/* 2. CONTENEDOR TIPO TARJETA ANCHA */
+.contenedor-detalle {
+    background-color: var(--azul-tarjeta);
+    width: 95%;
+    max-width: 850px; 
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 90px auto 40px auto;
+    text-align: left;
+}
+
+.header-detalle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-modulo {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header-detalle h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--blanco-puro);
+}
+
+.subtitulo-detalle {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* 3. DISTRIBUCIÓN DE LAS DOS COLUMNAS */
+.columnas-detalle {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.columna-info, .columna-estatus {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-seccion {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blanco-puro);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--azul-borde);
+    padding-bottom: 10px;
+}
+
+/* 4. BLOQUES DE TEXTO (SOLO LECTURA) */
+.bloque-dato {
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-secundario);
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.valor-dato {
+    font-size: 16px;
+    color: var(--blanco-puro);
+    background-color: rgba(19, 31, 43, 0.5);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Estilo un poco más libre para el bloque largo de comentarios */
+.valor-dato.comentario {
+    font-style: italic;
+    color: var(--gris-boto-texto);
+    line-height: 1.5;
+}
+
+/* 5. SECCIÓN SEGUIMIENTO Y BADGES */
+.tarjeta-estado-actual {
+    background-color: var(--azul-fondo-input);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--azul-borde);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.etiqueta-estatus {
+    font-size: 14px;
+    color: var(--texto-secundario);
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Reutilización de tus badges de la lista */
+.badge-estado {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 24px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.badge-estado.pendiente {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--color-pendiente);
+    border: 1px solid var(--color-pendiente);
+}
+
+.badge-estado.revision {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--color-revision);
+    border: 1px solid var(--color-revision);
+}
+
+.badge-estado.reparada {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: var(--color-reparada);
+    border: 1px solid var(--color-reparada);
+}
+
+.fecha-actualizacion {
+    font-size: 11px;
+    color: var(--texto-secundario);
+    margin: 12px 0 0 0;
+}
+
+/* 6. MARCO FOTOGRÁFICO DE LA IMAGEN DE EVIDENCIA */
+.marco-foto {
+    background-color: var(--azul-fondo-input);
+    border: 1px solid var(--azul-borde);
+    border-radius: 8px;
+    padding: 8px;
+    width: 100%;
+    height: 240px; /* Tamaño fijo uniforme para la foto del reporte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta y ajusta la foto proporcionalmente sin deformarla */
+    border-radius: 4px;
+}

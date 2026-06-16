@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CityLight -Registro de Usuario</title>
+    <title>CityLight - Registro de Usuario</title>
     <link rel="stylesheet" href="../CSS/Usuario/registroU.css">
     <link rel="stylesheet" href="../CSS/globales.css">
 </head>
 <body>
-
+ 
     <header class="barra-inframex">
         <div class="contenedor-marca">
             <div class="logo-marca"></div>
@@ -18,51 +18,60 @@
             </div>
         </div>
     </header>
-
+ 
     <nav class="retorno">
         <a href="loginU.html">Volver al Inicio de Sesión</a>
     </nav>
-
+ 
     <main class="contenedor-registro">
         <header class="header-registro">
             <h1 class="titulo-modulo">CityLight</h1>
             <h2>Crear cuenta</h2>
-            <p class="subtitulo-registro">Registrate como Usuario para reportar fallas</p>
+            <p class="subtitulo-registro">Regístrate como Usuario para reportar fallas</p>
         </header>
-
-        <form id="formulario-registro-usuario" action="#" method="POST">
-
+ 
+        <form id="form-registro">
+ 
             <div class="grupo-campo">
-                <label for="nombre">Nombre Completo</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre-registro">Nombre Completo</label>
+                <input type="text" id="nombre-registro" name="nombre" placeholder="Tu nombre completo">
+                <span class="error" id="error-nombre"></span>
             </div>
-
+ 
             <div class="grupo-campo">
-                <label for="correo">Correo Electronico</label>
-                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                <label for="correo-registro">Correo Electrónico</label>
+                <input type="email" id="correo-registro" name="correo" placeholder="ejemplo@correo.com">
+                <span class="error" id="error-correo"></span>
             </div>
-
+ 
             <div class="grupo-campo">
-                <label for="telefono">Numero de Telefono</label>
-                <input type="tel" id="telefono" name="telefono" required>
+                <label for="telefono-registro">Número de Teléfono</label>
+                <input type="tel" id="telefono-registro" name="telefono" placeholder="10 dígitos">
+                <span class="error" id="error-telefono"></span>
             </div>
-
+ 
             <div class="grupo-campo">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" name="contraseña" placeholder="Crea una contraseña segura" required>
+                <label for="contrasena-registro">Contraseña</label>
+                <input type="password" id="contrasena-registro" name="contrasena" placeholder="Mínimo 8 caracteres">
+                <span class="error" id="error-contrasena"></span>
             </div>
-
+ 
             <div class="grupo-campo">
-                <label for="confirmar-contraseña">Confirmar Contraseña</label>
-                <input type="password" id="confirmar-contraseña" name="confirmar-contraseña" placeholder="Repite tu contraseña" required>
+                <label for="confirmar-registro">Confirmar Contraseña</label>
+                <input type="password" id="confirmar-registro" name="confirmar" placeholder="Repite tu contraseña">
+                <span class="error" id="error-confirmar"></span>
             </div>
-
-            <button type="submit" class="btn-registrar">Registrarse</button>
+ 
+            <span class="error" id="error-general"></span>
+ 
+            <button type="submit" class="btn-registrar" id="btn-registro">Registrarse</button>
         </form>
-        
+ 
         <footer class="footer-login">
-            <p>Ya tienes una cuenta? <a href="loginU.html" class="enlace-login">Inicia Sesión aquí</a></p>
+            <p>¿Ya tienes una cuenta? <a href="loginU.html" class="enlace-login">Inicia Sesión aquí</a></p>
         </footer>
     </main>
+ 
+    <script src="../JS/registro.js"></script>
 </body>
 </html>
